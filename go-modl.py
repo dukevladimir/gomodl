@@ -1,10 +1,11 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from auth.forms import LoginForm
 
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
-
+app.config['SECRET_KEY'] = 'hard to guess string'
 
 @app.route('/')
 def index():
@@ -12,7 +13,8 @@ def index():
 
 @app.route('/login')
 def login():
-	return render_template('login.html')
+	form = LoginForm()
+	return render_template('login.html',form = form)
 
 @app.route('/register')
 def register():
