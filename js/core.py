@@ -11,7 +11,7 @@ class UnaryOperation:
 		self.eval(value)
 		return self._output
 
-def BinaryOperation:
+class BinaryOperation:
 
 	def __init__(self, func = None):
 		self._func = func
@@ -23,3 +23,11 @@ def BinaryOperation:
 	def output(self,data):
 		self.eval(data)
 		return self._output
+
+negate = UnaryOperation( lambda x: -x )
+square = UnaryOperation( lambda x: x * x )
+add = BinaryOperation( lambda x, y : x + y )
+subtract = BinaryOperation( lambda x, y : x - y )
+multiply = BinaryOperation( lambda x, y : x * y )
+divide = BinaryOperation( lambda x, y : x / y )
+power = BinaryOpeartion( lambda x, y: x**y )
